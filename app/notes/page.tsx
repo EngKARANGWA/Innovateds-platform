@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button"
 
 export default function NotesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 p-8">
-      <div className="max-w-3xl mx-auto bg-white rounded-lg shadow p-8">
-        <h1 className="text-3xl font-bold text-blue-900 mb-6">Learning Notes & Tutorial</h1>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 px-2 py-4 sm:px-4 md:px-8">
+      <div className="w-full max-w-3xl mx-auto bg-white rounded-lg shadow p-4 sm:p-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-blue-900 mb-6 text-center">Learning Notes & Tutorial</h1>
         
-        <h2 className="text-2xl font-semibold text-blue-800 mt-6 mb-2">Food and Agriculture</h2>
-        <ul className="list-disc pl-6 space-y-2 text-gray-800 mb-4">
+        <h2 className="text-xl sm:text-2xl font-semibold text-blue-800 mt-6 mb-2">Food and Agriculture</h2>
+        <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-gray-800 mb-4 text-base sm:text-lg">
           <li>
             <strong>Food irradiation:</strong> Radiation is used to sterilize food packaging. In the Netherlands, for example, milk cartons are freed from bacteria by irradiation (e.g. cobalt-60).
           </li>
@@ -25,8 +25,8 @@ export default function NotesPage() {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-semibold text-blue-800 mt-6 mb-2">Nuclear Medicine (Diagnostic and Imaging)</h2>
-        <ul className="list-disc pl-6 space-y-2 text-gray-800 mb-4">
+        <h2 className="text-xl sm:text-2xl font-semibold text-blue-800 mt-6 mb-2">Nuclear Medicine (Diagnostic and Imaging)</h2>
+        <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-gray-800 mb-4 text-base sm:text-lg">
           <li>
             <strong>Radionuclide diagnostics:</strong> Chemical compounds containing radionuclides are administered to a patient (e.g. Tc-99m).
           </li>
@@ -35,8 +35,8 @@ export default function NotesPage() {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-semibold text-blue-800 mt-6 mb-2">Industry</h2>
-        <ul className="list-disc pl-6 space-y-2 text-gray-800 mb-4">
+        <h2 className="text-xl sm:text-2xl font-semibold text-blue-800 mt-6 mb-2">Industry</h2>
+        <ul className="list-disc pl-5 sm:pl-6 space-y-2 text-gray-800 mb-4 text-base sm:text-lg">
           <li>
             <strong>Nondestructive testing:</strong> For non-destructive testing of structures for environmental safety (e.g. safer dams, avoiding floods, and other environmental risks). Isotopes used: cobalt-60, iridium-192.
           </li>
@@ -45,12 +45,12 @@ export default function NotesPage() {
           </li>
         </ul>
 
-        <div className="flex justify-between mt-8">
-          <Link href="/quiz">
-            <Button className="bg-blue-900 hover:bg-blue-800">Go to Quiz</Button>
+        <div className="flex flex-col sm:flex-row justify-between gap-4 mt-8">
+          <Link href="/quiz" className="flex-1">
+            <Button className="w-full bg-blue-900 hover:bg-blue-800">Go to Quiz</Button>
           </Link>
-          <Link href="/">
-            <Button variant="outline">Back to Home</Button>
+          <Link href="/" className="flex-1">
+            <Button variant="outline" className="w-full">Back to Home</Button>
           </Link>
         </div>
       </div>

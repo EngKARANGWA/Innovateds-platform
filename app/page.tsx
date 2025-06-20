@@ -47,19 +47,19 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">
       {/* Header */}
-      <header className="container mx-auto px-4 py-6 flex justify-between items-center">
+      <header className="container mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-y-4 gap-x-3">
         <div className="flex items-center space-x-3">
           <Image src="/logo.png" alt="INNOVATIDES" width={50} height={50} />
           <span className="text-2xl font-bold text-blue-900">INNOVATIDES</span>
         </div>
-        <div className="space-x-4">
+        <div className="flex space-x-4 w-full sm:w-auto justify-center sm:justify-end">
           <Link href="/login">
-            <Button variant="outline" className="bg-white text-blue-900 border-blue-200">
+            <Button variant="outline" className="bg-white text-blue-900 border-blue-200 w-full sm:w-auto">
               Login
             </Button>
           </Link>
           <Link href="/signup">
-            <Button className="bg-blue-900 hover:bg-blue-800">Sign Up</Button>
+            <Button className="bg-blue-900 hover:bg-blue-800 w-full sm:w-auto">Sign Up</Button>
           </Link>
         </div>
       </header>
@@ -122,7 +122,7 @@ export default function LandingPage() {
           <p className="text-xl text-gray-600">Master the non-energy applications of nuclear technology</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -131,8 +131,8 @@ export default function LandingPage() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
             >
               <Card className="h-full hover:shadow-lg transition-shadow duration-300 border-blue-100">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CardContent className="p-6 sm:p-8 text-center flex flex-col items-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                     <feature.icon className="w-8 h-8 text-blue-900" />
                   </div>
                   <h3 className="text-2xl font-semibold text-blue-900 mb-4">{feature.title}</h3>
