@@ -8,6 +8,8 @@ import "./globals.css"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
 import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -66,7 +68,14 @@ export default function RootLayout({
                 <span className="text-lg font-semibold text-blue-900">INNOVATIDES</span>
               </div>
             </header>
-            <main className="flex-1 overflow-auto">{children}</main>
+            <main className="flex-1 overflow-auto">
+              {children}
+              <Link href="/notes">
+                <Button variant="outline" className="mb-4">
+                  Read Notes / Tutorial
+                </Button>
+              </Link>
+            </main>
           </SidebarInset>
         </SidebarProvider>
       </body>

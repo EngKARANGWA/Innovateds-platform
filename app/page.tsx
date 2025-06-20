@@ -9,6 +9,12 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Microscope, Sprout, Factory } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import dynamic from "next/dynamic"
+// Correct QRCode dynamic import for react-qr-code
+const QRCode = dynamic(
+  () => import("react-qr-code").then(mod => mod.default),
+  { ssr: false }
+)
 
 export default function LandingPage() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -183,7 +189,22 @@ export default function LandingPage() {
           </Link>
         </motion.div>
       </section>
-
+      {/* QR Code Section */}
+      <section className="container mx-auto px-4 py-12 text-center">
+        <h2 className="text-2xl font-bold text-blue-900 mb-4">Scan to Access Dashboard</h2>
+        <p className="text-gray-600 mb-4">
+          Scan this QR code with your mobile device to go directly to your dashboard.
+        </p>
+        <div className="flex justify-center">
+          <Image
+            src="/scan-me.jpg"
+            alt="Scan this QR code to access the dashboard"
+            width={180}
+            height={180}
+            className="rounded shadow"
+          />
+        </div>
+      </section>
       {/* Footer */}
       <footer className="bg-blue-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
